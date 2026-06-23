@@ -8,6 +8,11 @@ import os
 st.set_page_config(page_title="Radio Tamazuj News Dashboard", page_icon="📰", layout="wide")
 st.title("📰 Radio Tamazuj News Articles Dashboard")
 
+st.write("This dashboard is a pilot. It extracted news articles from two media sources for "
+         "two months and analyzed them via AI to get a summary, identify locations and  "
+         "assign keywords. This analysis is a proof of concept and not meant to inform decisions.")
+
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # =========================
@@ -249,12 +254,8 @@ else:
 # =========================
 st.subheader("📊 Articles")
 
-st.write("This dashboard is a pilot. It extracted news articles from two media sources for "
-         "two months and analyzed them via AI to get a summary, identify locations and  "
-         "assign keywords. This analysis is a proof of concept and not meant to inform decisions.")
-
 display_df = filtered_df[
-    ['Title','Date','Source_File','Location','Summary','Keywords','URL','Word Count']
+    ['Title','Date','Location','Summary','Keywords','URL','Word Count']
 ].copy()
 
 st.write(f"Showing {len(display_df)} articles")
